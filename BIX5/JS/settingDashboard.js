@@ -41,6 +41,12 @@ var showSlideNavigator = function(chk) {
 }
 
 
+var showSideBarBtn = function(chk){
+    //위 showSlildeNavigator와 작동 방식이 같다.
+    BIX5.dashboard.get("dashboard1").showSideBarBtn(chk);
+}
+
+
 // BIX5 Dashboard 를 생성합니다.
  // 파라메터 (순서대로) 
  // 대시보드 생성을 위한 파라메터는 다음과 같습니다.
@@ -141,7 +147,7 @@ BIX5.dashboard.create("dashboard1", "dashboardHolder", function(dashboard){
      //false를 넘기면 위젯의 이동, 리사이징, 최대화(위젯이 widow 타입인 경우), 닫기버튼이 비활성화 됩니다. 
     dashboard.setEnabled(false);
     // Q.그럼 dashboard의 create 함수 인자 option의 enabled하고 다른 점은 무엇이지????
-    // A. 대시보드 편집 여부를 설정합니다. dashboard.create의 enabled옵션보다 우선시 됩니다. 
+     // A. 대시보드 편집 여부를 설정합니다. dashboard.create의 enabled옵션보다 우선시 됩니다. 
      //※ 파라미터 타입이 다른 경우 해당 설정을 실행하지 않습니다.
 
     //이게 왜 갑자기 추가가 되었는지는 모르겠다. 
@@ -149,4 +155,9 @@ BIX5.dashboard.create("dashboard1", "dashboardHolder", function(dashboard){
      //checked 메서드는 id의 체크 여부를 알아내는 것으로 그 값을 true로 한 것은 아마 초기값을 설정 한 듯 하다.
     document.getElementById("slideControllerChk").checked = true;
 
+
+    //showSlideNavigator와 마찬가지로 생성된 모습
+    document.getElementById("sideBarBtnChk").checked = true;
+
+    
 }, "100%","100%", {enabled:true, gridlines:false});
