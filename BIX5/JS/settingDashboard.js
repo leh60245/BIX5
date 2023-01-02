@@ -26,6 +26,14 @@ var moveLast = function() {
     BIX5.dashboard.get('dashboard1').moveLast();    
 }
 
+
+var moveSlideAt = function() {
+    var idx = document.getElementById("slideIdx").value*1;
+    // 해당 인덱스 슬라이드로 이동한다.
+    BIX5.dashboard.get('dashboard1').setSelectedIndex(idx);
+}
+
+
 // BIX5 Dashboard 를 생성합니다.
  // 파라메터 (순서대로) 
  // 대시보드 생성을 위한 파라메터는 다음과 같습니다.
