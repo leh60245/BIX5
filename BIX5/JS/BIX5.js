@@ -1,13 +1,20 @@
+var removeSlide = function() {
+    //dashboard의 removeSlideAt 함수를 이용하여 슬라이드를 삭제할 수 있습니다.
+    BIX5.dashboard.get("dashboard1").removeSlideAt(0);
+}
+
 // BIX5 Dashboard 를 생성합니다.
  // 파라메터 (순서대로) 
  // 대시보드 생성을 위한 파라메터는 다음과 같습니다.
- // 1. (string) 대시보드 id
+ // BIX5.dashboard.create(id, target, readyHandler, width, height, options)
+ // 1. (string) 생성될 대시보드 id
  // 2. (string) 대시보드가 위치할 div의 id
- // 3. (function) 대시보드 readyHandler -- 위젯의 메타정보를 설정.
+ // 3. (function) 대시보드가 사용할 준비가 되면 호출되는 함수 -- 위젯의 메타정보를 설정.
  // 4. (number) 대시보드의 가로 사이즈
  // 5. (number) 대시보드의 세로 사이즈
  // 6. (object) options. 
- // 6-1. (boolean) enabled 대시보드 편집 여부
+ // 6-1. (boolean) enabled 대시보드 편집 여부. ture면 위젯을 드래그, 리사이징, 삭제를 할 수 있다.
+ // 6-2. (boolean) gridlines 대시보드의 격자선 보이기 여부를 설정한다.
 BIX5.dashboard.create("dashboard1", "dashboardHolder", function(dashboard){
     // Dashboard readyHandler에서 위젯의 메타정보를 설정한다.
 
@@ -93,4 +100,4 @@ BIX5.dashboard.create("dashboard1", "dashboardHolder", function(dashboard){
     //false를 넘기면 위젯의 이동, 리사이징, 최대화(위젯이 widow 타입인 경우), 닫기버튼이 비활성화 됩니다. 
     dashboard.setEnabled(false);
     
-}, "100%","100%", {enabled:true});
+}, "100%","100%", {enabled:true, gridlines:false});
