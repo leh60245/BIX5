@@ -159,5 +159,8 @@ BIX5.dashboard.create("dashboard1", "dashboardHolder", function(dashboard){
     //showSlideNavigator와 마찬가지로 생성된 모습
     document.getElementById("sideBarBtnChk").checked = true;
 
-    
+
+    //dashboard의 showGridLine 함수에 인수로 true를 넘기면 슬라이드의 격자선이 보이고 false를 넘기면 슬라이드의 격자선이 숨겨집니다. 
+     //※ 파라미터 타입이 다른 경우 해당 설정을 실행하지 않습니다.
+    dashboard.showGridLine(true);
 }, "100%","100%", {enabled:true, gridlines:false});
