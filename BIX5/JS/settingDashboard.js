@@ -122,5 +122,8 @@ BIX5.dashboard.create("dashboard1", "dashboardHolder", function(dashboard){
     //dashboard의 setEnabled 함수에 인수로 true를 넘기면 위젯의 이동, 리사이징, 최대화(위젯이 widow 타입인 경우), 닫기버튼이 활성화되고 
     //false를 넘기면 위젯의 이동, 리사이징, 최대화(위젯이 widow 타입인 경우), 닫기버튼이 비활성화 됩니다. 
     dashboard.setEnabled(false);
-    
+    // Q.그럼 dashboard의 create 함수 인자 option의 enabled하고 다른 점은 무엇이지????
+    // A. 대시보드 편집 여부를 설정합니다. dashboard.create의 enabled옵션보다 우선시 됩니다. 
+     //※ 파라미터 타입이 다른 경우 해당 설정을 실행하지 않습니다.
+
 }, "100%","100%", {enabled:true, gridlines:false});
