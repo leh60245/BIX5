@@ -113,18 +113,20 @@ BIX5.dashboard.create("dashboard1", "dashboardHolder", function(dashboard){
 
 
     var items = [
-        {label:"차트 위젯", children:chartWidgetPool},
-        {label:"그리드 위젯", type:"grid", contentUrl:"./Widgets/Grid/BasicGrid.html"},
-        {label:"맵차트 위젯", type:"mapchart", contentUrl:"./Widgets/MapChart/SouthKoreaDrillDownDong12Gu_GIS.html"},
-        {label:"HTML 위젯 - 다음 지도", type:"html", contentUrl:"./Widgets/Html/map.html"},
-        {label:"iFrame 위젯", type:"iframe", componentOptions:{url:"http://www.bixsoft.net"}, options:{"border":true,"borderColor":"#ccc","borderWidth":"1px"}},
-        {label:"비디오 위젯", type:"video", componentOptions:{autoplay:true, controls:true, loop:true, muted:true, sources:[{src:"./Web/Videos/Blue.mp4", type:"video/mp4"}]},
-        contentUrl:"./Widgets/Html/helloWorld.html"},
-        {label:"Youtube 위젯 - 실시간 뉴스", type:"youtube", contentUrl:"./Widgets/Youtube/getting_started.html", componentOptions:{videoId:"0GN8t2u3flc", playerVars:{autoplay:1}}, options:{border:true, borderColor:"#ccc", borderWidth:"2px"}},
-        {label:"이미지 위젯",type:"image", options:{border:false}, componentOptions:{maintainAspectRatio:true, src:"./Web/Images/bix5_logo.png", alt:"BIX5 Logo", alpha:1}},
-        {label:"사운드 위젯", type:"sound", componentOptions:{autoplay:false, controls:true, loop:false, muted:false, sources:[{src:"./Web/Sounds/Atlantis441.mp3", type:"audio/mpeg"}]}},
-        {label:"빈 위젯", type:"blank", options: {"border":true,"borderColor":"#a6a6a6","borderWidth":"1px"}}
+        {label:"Chart Widget", children:[
+            {label:"Line 2D", title:"Line_2D", type:"chart", contentUrl:"./Widgets/Chart/Line_2D.html", options:{border:true}},
+            {label:"Column 2D", title:"Column_2D", type:"chart", contentUrl:"./Widgets/Chart/Column_2D.html", options:{border:true}},
+            {label:"Combi 2D Multi", title:"Combi_2D_Multi", type:"chart", contentUrl:"./Widgets/Chart/Combi_2D_Multi.html", options:{border:true}},
+            {label:"Dash Lines", title:"Dash_Lines", type:"chart", contentUrl:"./Widgets/Chart/Dash_Lines.html", options:{border:true}},
+            {label:"History", title:"History_2D_Line", type:"chart", contentUrl:"./Widgets/Chart/History_2D_Line.html", options:{border:true}},
+            {label:"Pie 3D", title:"Pie_3D", type:"chart", contentUrl:"./Widgets/Chart/Pie_3D.html", options:{border:true}},
+            {label:"Plot", title:"Plot_2D_Ex", type:"chart", contentUrl:"./Widgets/Chart/Plot_2D_Ex.html", options:{border:true}},
+            {label:"Target Bar", title:"Target_Bar_3D", type:"chart", contentUrl:"./Widgets/Chart/Target_Bar_3D.html", options:{border:true}}
+        ]},
+        {label:"blank", type:"blank", options: {"border":true,"borderColor":"#a6a6a6","borderWidth":"1px"}}
     ];
+    //dashboard의 setWidgetPool 함수에 인수로 위젯 정보가 담긴 array을 넘겨 사이드바의 위젯리스트에 위젯들을 설정할 수 있다.
+    //함수 안에 [] array를 집어 넣는다.
     dashboard.setWidgetPool(items);
  
     //dashboard의 setEnabled 함수에 인수로 true를 넘기면 위젯의 이동, 리사이징, 최대화(위젯이 widow 타입인 경우), 닫기버튼이 활성화되고 
