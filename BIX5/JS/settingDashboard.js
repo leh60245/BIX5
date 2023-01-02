@@ -47,6 +47,14 @@ var showSideBarBtn = function(chk){
 }
 
 
+var setGap = function(px){
+    //첫번째 슬라이드의 위젯 간의 간격을 조정한다.
+     //gap의 기본 값은 10px로 함수 안에 number 값을 넣는다.
+    var dashboard = BIX5.dashboard.get("dashboard1");
+    dashboard.setGap(px);
+}
+
+
 // BIX5 Dashboard 를 생성합니다.
  // 파라메터 (순서대로) 
  // 대시보드 생성을 위한 파라메터는 다음과 같습니다.
