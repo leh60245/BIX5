@@ -25,37 +25,8 @@
     <script language="javascript" type="text/javascript" src="../../BIX5/JS/BIX5.js"></script> 
 
 
-    <script type="text/javascript">
-        // -----------------------대시보드 설정 시작-----------------------
-        BIX5.setAssetsPath("../../BIX5/Assets/");
-
-        // BIX5 Dashboard을 생성합니다.
-        // 파라메터 (순서대로)
-        // 대시보드 생성을 위한 파라메터는 다음과 같습니다.
-        // 1. (string) 대시보드 id
-        // 2. (string) 대시보드가 위치할 div의 id
-        // 3. (function) 대시보드 readyHandler
-        // 4. (number) 대시보드의 가로 사이즈
-        // 5. (number) 대시보드의 세로 사이즈
-        // 6. (object) options.
-        // 6-1. (boolean) enabled 대시보드 수정 가능 여부
-        // 6-2. (boolean) gridlines 그리드라인 보이기 여부
-        BIX5.dashboard.create("dashboard1", "dashboardHolder", function(dashboard){
-            var slides = [
-                {slideName:"slide1",
-                widgets:[{id:"title",x:10,y:0,width:250,height:40,contentUrl:"./Widgets/Html/title.html",type:"html",title:"Untitled",options:{border:false,borderWidth:"0px",borderColor:"#ffffff"}}
-                ,{id:"iframe",x:720,y:50,width:550,height:640, type:"iframe",title:"headertitle",options:{border:true,borderColor:"#000",borderWidth:"1px"}
-                ,componentOptions:{url:"http://www.bixsoft.net"}}
-                ,{id:"Image_single_ratio",x:10,y:50,width:700,height:240,contentUrl:"./Widgets/Chart/Image_single_ratio.html",type:"chart",title:"Image_single_ratio",options:{border:true,borderColor:"#EEEEEE",borderWidth:"1px"}}
-                ,{id:"DesignMap_World",x:10,y:300,width:700,height:190,contentUrl:"./Widgets/MapChart/DesignMap_World.html",type:"mapchart",title:"DesignMap_World",options:{border:true,borderColor:"#EEEEEE",borderWidth:"1px"}}
-                ,{id:"BasicGrid",x:10,y:500,width:700,height:190,contentUrl:"./Widgets/Grid/BasicGrid.html",type:"grid",title:"BasicGrid",options:{border:true,borderColor:"#EEEEEE",borderWidth:"1px"}}
-                ,{x:270,y:0,width:90,height:40,type:"html",title:"Untitled",contentHtml:"<h1>Slide1</h1>", options:{border:false}}
-            ]
-        }
-    ];
-    dashboard.setData(slides);
-}, "1280","720", {enabled:false, gridlines:false});
-    </script>
+    <!-----------------------대시보드 설정 시작----------------------->
+    <script language="javascript" type="text/javascript" src="../../BIX5/JS/settingDashboard.js"></script>
 
 
     <!-- 샘플 작동을 위한 css -->
