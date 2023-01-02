@@ -1,9 +1,28 @@
+var removeWidget = function(){
+    var dashboard = BIX5.dashboard.get("dashboard1");
+    var slide = dashboard.getSlideAt(0);
+    //Slide의 removeSlide함수는 위젯 아이디를 받아 삭제하는 함수.
+     //근데 이렇게 작성을 하면 아이디를 어떻게 받는 거지..?
+     //위 함수 인자로 아이디를 받아야 하는거 같은데, 받는 인자가 없다.
+     //그리고 함수 인자로 string을 넣는다.
+    slide.removeWidget("Dash_Lines");
+}
+  
+var removeWidgetAll = function(){
+    var dashboard = BIX5.dashboard.get("dashboard1");
+    var slide = dashboard.getSlideAt(0);
+    slide.removeWidgetAll();
+}
+
+
 BIX5.dashboard.create("dashboard1", "dashboardHolder", function(dashboard){
     dashboard.getSideBar().setSlideLayouts(slidelayouts);
 
     var slides =  [
         {slideName:"slide1",
-        widgets:[]},
+        widgets:[
+            {id:"Dash_Lines", x:230,y:140,width:410,height:240, type:"chart", contentUrl:"./Widgets/Chart/Dash_Lines.html", options:{border:true, borderColor:"#ccc"}}
+        ]},
         {slideName:"slide2",
         widgets:[]},
         {slideName:"slide3",
