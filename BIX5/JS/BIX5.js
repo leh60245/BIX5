@@ -42,6 +42,9 @@ BIX5.dashboard.create("dashboard1", "dashboardHolder", function(dashboard){
         ]}
     ];
     
+    //dashboard의 setSlideWidth, setSlideHeight()함소로 슬라이드의 너비, 높이 지정할 수 있다.
+    dashboard.setSlideWidth(850);
+    dashboard.setSlideHeight(560);
     
     dashboard.setSlides(slides);
     
