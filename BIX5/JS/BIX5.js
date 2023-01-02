@@ -48,6 +48,32 @@ BIX5.dashboard.create("dashboard1", "dashboardHolder", function(dashboard){
     
     dashboard.setSlides(slides);
     
+    //dashboard의 addSlide함수를 이용하여 슬라이드를 추가할 수 있다.
+    //함수 안에 {} object를 집어 넣는다.
+    dashboard.addSlide({
+        slideName:"slide2",
+        widgets:[{x:390, y:260, width:170, height:40, contentHtml:"<h1>slide2</h1>", type:"html"}]
+    });
+    //dashboard의 addSlildes함수를 이용하여 여러 슬라이드를 추가할 수 있다.
+    //함수 안에 [] array를 집어 넣는다.
+    dashboard.addSlides([
+        {
+            slideName:"slide4",
+            widgets:[{x:390, y:260, width:170, height:40, contentHtml:"<h1>slide4</h1>", type:"html"}]
+        },
+        {
+            slideName:"slide5",
+            widgets:[{x:390, y:260, width:170, height:40, contentHtml:"<h1>slide5</h1>", type:"html"}]
+        }
+    ]);
+    //dashboard의 addSlideAt함수를 이용하여 슬라이드를 "특정" 인덱스에 추가할 수 있다.
+    //addSlide와 비슷하지만, 마지막에 index(type number)을 추가하여 특정 위치를 선정할 수 있다.
+    dashboard.setSlideAt({
+        slideName:"slide3",
+        widgets:[{x:390, y:260, width:170, height:40, contentHtml:"<h1>slide3</h1>", type:"html"}]
+    }, 2);
+
+
     var items = [
         {label:"차트 위젯", children:chartWidgetPool},
         {label:"그리드 위젯", type:"grid", contentUrl:"./Widgets/Grid/BasicGrid.html"},
@@ -61,7 +87,6 @@ BIX5.dashboard.create("dashboard1", "dashboardHolder", function(dashboard){
         {label:"사운드 위젯", type:"sound", componentOptions:{autoplay:false, controls:true, loop:false, muted:false, sources:[{src:"./Web/Sounds/Atlantis441.mp3", type:"audio/mpeg"}]}},
         {label:"빈 위젯", type:"blank", options: {"border":true,"borderColor":"#a6a6a6","borderWidth":"1px"}}
     ];
-  
     dashboard.setWidgetPool(items);
  
     //dashboard의 setEnabled 함수에 인수로 true를 넘기면 위젯의 이동, 리사이징, 최대화(위젯이 widow 타입인 경우), 닫기버튼이 활성화되고 
