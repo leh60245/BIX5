@@ -18,5 +18,28 @@
                     }];
             dashboard.setSlides(slides);
         }, "850", "600", {enabled:false, gridlines:true});
+    </script>  
+    
+    <!--3. Widget 구성하기-->
+    <!--3-1. 레이아웃 생성하기-->
+    <script type="text/template">
+        <BIX5 backgroundColor="#FFFFF" borderStype="none">
+            <Options> <!--제목이랑 소제목 지정-->
+                <Caption text="World Top 10-Fastest Growing Economies (2017)"/>
+                <SubCaption text="GDP" textAlign="center"/>
+            </Options> <!--가로축은 나라 이름으로 정렬해 보여주고 세로축은 최댓값 지정 후 너비 지정-->
+            <Column2DChart showDataTips="true">
+                <horizontalAxis>
+                    <CategoryAxis categoryfield="Country"/>
+                </horizontalAxis>
+                <vericalAxis>
+                    <LinearAxis maximum="100" interval="10"/>
+                </vericalAxis>
+                <series> <!--이거는 아직 모르겠음...-->
+                    <Column2DSeries labelPosition="outside" yfield="GDP" displayName="GDP Growth (ln%)">
+                    </Column2DSeries>
+                </series>
+            </Column2DChart>
+        </BIX5>
     </script>    
 </body>
