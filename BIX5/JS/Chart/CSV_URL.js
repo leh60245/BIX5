@@ -54,7 +54,8 @@ var dataURL = './DataXml/multiData3.csv'
 //레이아웃은 크게 Options, Chart, Styple 세 부분으로 구분된다.
 var layoutStr =
 //BIX5 노드의 속성은 차트 전체의 꾸미기를 담당한다.
-'<BIX5 backgroundColor="#FFFFFF" borderStyle="none">'
+//아래 Style 노드에서 styleName="" 형식으로 가져올 수 있다.
+'<BIX5 styleName="bix5ChartStyle">'
     //1. Options 태그에서 차트의 제목과 부제목, 그리고 범례(Legend)를 삽입할 수 있다.
 +   '<Options>'
 +       '<Caption text="Annual Report"/>'
@@ -63,6 +64,20 @@ var layoutStr =
 +   '</Options>'
 
 +   '<NumberFormatter id="numFmt" useThousandsSeparator="true"/>'
+
+    //2. Style (CSS)
+     //Style 노드는 전반적인 스타일을 미리 정의하는 스타일시트다.
+     //규칙
+      //1. Style 노드는 반드시 <BIX5> 노드의 자식 위치에 정의하기
+      //2. 스타일네임을 정의 할 때 시작은 도트(.)를 찍고 소문자로 시작하는 영문자로 표기하기
+      //3. 스타일네임을 정한 후 그에 따른 구체적인 스타일을 정의 할 때는 반드시 중괄호로 시작과 끝을 표시하기
+      //4. 속성명과 속성값의 구분은 콜론이며 긑은 세미콜론으로 나타낸다.
++   '<Style>'
++       '.bix5ChartStyle {'
++       'backgroundColor:0xFFFFE; borderColor:0x77EE9E; cornerRadius:12; borderStyle:solid'
++       '}'
+
+
 +   '<Combination2DChart showDataTips="true">'      
 +       '<horizontalAxis>'
         /* csv데이터의 첫번 째 열 데이터에 할당 되어야 하기 때문에 F0 */
@@ -71,10 +86,11 @@ var layoutStr =
 +       '<verticalAxis>'
 +           '<LinearAxis id="vAxis1" formatter="{numFmt}" maximum="2200"/>'
 +       '</verticalAxis>'
+
 +       '<series>'
 +           '<Column2DSet type="clustered">'
 +               '<series>'
-                /* csv데이터의 두번 째 열 데이터에 할당 되어야 하기 때문에 F1 */
+                    /* csv데이터의 두번 째 열 데이터에 할당 되어야 하기 때문에 F1 */
 +                   '<Column2DSeries yField="F1" displayName="Profit" labelPosition="outside" showValueLabels="[0]">'
 +                       '<fill>'
 +                           '<SolidColor color="#40b2e6"/>'
