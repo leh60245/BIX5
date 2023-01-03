@@ -3,6 +3,13 @@
 var jsVars = "BIX5OnLoadCallFunction=gridReadyHandler";
 
 
+// 데이터가 CSV형일 경우 넣어줍니다. (설정을 안할경우 xml로 인식하여 오류가 발생합니다)
+// csv, fastCsv가 설정가능하며 다른 점은 다음과 같습니다.
+// csv : CSV 표준(RFC-4180)에 따라 파싱하며, 필드 데이터가 문자열인 경우 '"',',','\n' 를 포함할 경우 사용합니다.
+// fastCsv : CSV 형식으로 파싱하며, 필드 데이터에 '"',',','\n' 가 포함되지 않아 레코드 구분은 '\n', 필드 구분은 ','로만 분리가 가능할 경우 사용합니다.
+jsVars += "&dataType=csv";
+
+
 // BIX5 를 생성합니다.
 // 파라메터 (순서대로)
  //1. 그리드의 id ( 임의로 지정하십시오. )
@@ -10,7 +17,7 @@ var jsVars = "BIX5OnLoadCallFunction=gridReadyHandler";
  //3. 그리드 생성 시 필요한 환경 변수들의 묶음인 jsVars
  //4. 그리드의 가로 사이즈 (생략 가능, 생략 시 100%)
  //5. 그리드의 세로 사이즈 (생략 가능, 생략 시 100%)
-//BIX5.grid.create("grid1", "gridHolder", jsVars, "100%", "100%");
+BIX5.grid.create("grid1", "gridHolder", jsVars, "100%", "100%");
 
 
 // 그리드의 속성인 BIX5OnLoadCallFunction 으로 설정된 함수.
@@ -22,8 +29,8 @@ function gridReadyHandler(id) {
     gridApp = document.getElementById(id);  //그리드를 포함하는 div 객체
     gridRoot = gridApp.getRoot();           //데이터와 그리드를 포함하는 객체
 
-//  gridApp.setLayout(layoutStr);
-//  gridApp.setData(gridData);
+    gridApp.setLayout(layoutStr);
+    gridApp.setData(gridData);
 
     var layoutCompleteHandler = function(event) {
         //getDataGrid(): 설정된 레이아웃에 의해 생성된 DataGrid 객체를 반환합니다.
@@ -33,27 +40,15 @@ function gridReadyHandler(id) {
     //addEventListener(type, listener): type에 선언된 이벤트가 발생할 경우 이벤트를 받을 수 있는 listener함수를 등록합니다.
     gridRoot.addEventListener("layoutComplete", layoutCompleteHandler);
 }
-
 var gridApp, gridRoot, dataGrid;
-var objFlag=false, layoutFlag=false, dataFlag=false;
-function girdCreate(){
-    BIX5.grid.create("grid1", "gridHolder", jsVars, "100%", "100%");
-    objFlag = true;
-}
 
-function setLayout(){
-    if (objFlag) {
-        gridApp.setLayout(layoutStr);
-        layoutFlag = true;
-    }
+// CSV 형태로 데이터 넣기
+function changeCSVData() {
+    gridApp.setDataType("csv");
+    gridApp.setLayout(layoutStr1);
+    gridApp.setData(gridData1);
 }
-
-function setData() {
-    if (layoutFlag) {
-        gridApp.setData(gridData);
-    }
-}
-
+ 
 //----------------------- 그리드 설정 끝 -----------------------@nd
 var layoutStr =
 '<BIX5>\
