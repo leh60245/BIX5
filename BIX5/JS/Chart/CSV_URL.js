@@ -51,11 +51,17 @@ var dataURL = './DataXml/multiData3.csv'
 *********************************************************************************************************************/
 
 // 라인 차트를 생성하는 레이아웃이다. (string 타입)
+//레이아웃은 크게 Options, Chart, Styple 세 부분으로 구분된다.
 var layoutStr =
+//BIX5 노드의 속성은 차트 전체의 꾸미기를 담당한다.
 '<BIX5 backgroundColor="#FFFFFF" borderStyle="none">'
+    //1. Options 태그에서 차트의 제목과 부제목, 그리고 범례(Legend)를 삽입할 수 있다.
 +   '<Options>'
 +       '<Caption text="Annual Report"/>'
++       '<SubCaption text="2008"/>'
++       '<Legend/>'
 +   '</Options>'
+
 +   '<NumberFormatter id="numFmt" useThousandsSeparator="true"/>'
 +   '<Combination2DChart showDataTips="true">'      
 +       '<horizontalAxis>'
