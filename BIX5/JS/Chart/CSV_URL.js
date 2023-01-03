@@ -87,6 +87,11 @@ var layoutStr =
 +       '}'
 +   '</Style>'
 
+
+    //3. Chart
+     //Chart vs Series
+     //Chart:   실질적인 차트로 외형을 담당한다. 축, 배경, 사이즈 등이 포함된다. 시리즈의 위치를 지정한다.
+     //Series:  실질적인 데이터를 표현한다. 표현하고자 하는 수치데이터가 3개인 경우 반드시 시리즈를 3개 정의할 필요가 있다.
 +   '<Combination2DChart showDataTips="true" styleName="chartStyle">'      
 +       '<horizontalAxis>'
         /* csv데이터의 첫번 째 열 데이터에 할당 되어야 하기 때문에 F0 */
