@@ -58,8 +58,8 @@ var layoutStr =
 '<BIX5 styleName="bix5ChartStyle">'
     //1. Options 태그에서 차트의 제목과 부제목, 그리고 범례(Legend)를 삽입할 수 있다.
 +   '<Options>'
-+       '<Caption text="Annual Report"/>'
-+       '<SubCaption text="2008"/>'
++       '<Caption text="Annual Report" styleName="captionStyle"/>'
++       '<SubCaption text="2008" styleName="subCaptionStyle"/>'
 +       '<Legend/>'
 +   '</Options>'
 
@@ -76,9 +76,18 @@ var layoutStr =
 +       '.bix5ChartStyle {'
 +       'backgroundColor:0xFFFFE; borderColor:0x77EE9E; cornerRadius:12; borderStyle:solid'
 +       '}'
++       '.captionStyle {'
++       'fontSize:12; fontFamily:Tahoma; fontWeight:bold; color:#777777;'
++       '}'
++       '.subCaptionStyle {'
++       'fontSize:11; fontFamily:italic; color:#777777;'
++       '}'
++       '.chartStyle {'
++       'fontSize:11; fontFamily:italic; color:#0000FF;'
++       '}'
++   '</Style>'
 
-
-+   '<Combination2DChart showDataTips="true">'      
++   '<Combination2DChart showDataTips="true" styleName="chartStyle">'      
 +       '<horizontalAxis>'
         /* csv데이터의 첫번 째 열 데이터에 할당 되어야 하기 때문에 F0 */
 +           '<CategoryAxis categoryField="F0" padding="0.7"/>'
