@@ -41,5 +41,12 @@
                 </series>
             </Column2DChart>
         </BIX5>
-    </script>    
+    </script>
+    
+    <!--3-2. JSON형식의 데이터를 URL로 연동하기-->
+    <script type="text/javascript"> <!--Data를 레이아웃과 연동시키기 위해서는 type을 text/javascript로 선언해 주어야 함.-->  
+        widget.componentReadyHandler = function(componentId){
+            widget.setDataURL("/Widgets/Chart/data/Column_2D.json")
+        }
+    </script>
 </body>
