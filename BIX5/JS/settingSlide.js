@@ -63,6 +63,8 @@ BIX5.dashboard.create("dashboard1", "dashboardHolder", function(dashboard){
     //href는 location 객체에 속해있는 프로퍼티로 현재 접속중인 페이지 정보를 가지고 있음.
      //값을 변경할 수 있는 프로퍼티여서 다른 페이지로 이동하는데도 사용되고 있음.
     var url = checkUrl(location.href);
+    //localStorge를 사용하면, 브라우저에 key-value 값을 Storage에 저장할 수 있다. 
+     //저장된 데이터는 세션간에 공유한다. 즉, 세션이 바뀌어도 데이터는 유지된다.
     if(typeof localStorage !== "undefined" && localStorage.getItem(url) != null){
         var data = JSON.parse(localStorage.getItem(url));
         var slide = dashboard.getSlideAt(data.idx);
