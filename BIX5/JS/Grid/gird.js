@@ -48,7 +48,13 @@ function changeCSVData() {
     gridApp.setLayout(layoutStr1);
     gridApp.setData(gridData1);
 }
- 
+
+// CSV URL 형태로 데이터 넣기
+function changeCSVURL() {
+    gridApp.setDataType("csv");
+    gridApp.setLayout(layoutStr);
+    gridApp.setDataURLEx("./Data/DataOneDepthMailSend.csv");
+}
 //----------------------- 그리드 설정 끝 -----------------------@nd
 var layoutStr =
 '<BIX5>\
