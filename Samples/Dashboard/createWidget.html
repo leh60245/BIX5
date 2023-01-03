@@ -7,3 +7,16 @@
     <!--실제적인 BIX5 라이브러리-->
     <script type="text/javascript" src="../../BIX5/JS/BIX5.js"></script>
 </head>
+<body>
+    <!--2. BIX5 Chart가 들어갈 대시보드 구성하기-->
+    <script>
+        BIX5.dashboard.create("dashboard1", "dashboardHolder", function(dashboard) {
+            var slides = [{slideName:"slide1",
+                        widgets:[{id:"Column_2D",x:10,y:10,width:500,height:290,title:"Column 2D",
+                        type:"chart",
+                        contentUrl:"./Widgets/Chart/Column_2D.html"}]
+                    }];
+            dashboard.setSlides(slides);
+        }, "850", "600", {enabled:false, gridlines:true});
+    </script>    
+</body>
