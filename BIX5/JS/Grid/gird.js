@@ -17,7 +17,8 @@ BIX5.grid.create("grid1", "gridHolder", jsVars, "100%", "100%");
  //BIX5 그리드의 준비가 완료된 경우 이 함수가 호출됩니다.
  //이 함수를 통해 그리드에 레이아웃과 데이터를 삽입합니다.
  //파라메터 : id - BIX5.grid.create() 사용 시 사용자가 지정한 id 입니다.
-var gridApp, gridRoot, dataGrid;
+var gridApp, gridRoot, dataGrid, collection;
+var lastVpos = 0;   //마지막 스크롤 위치
 function gridReadyHandler(id) {
     //BIX5Grid 관련 객체
     gridApp = document.getElementById(id);  //그리드를 포함하는 div 객체
@@ -25,11 +26,27 @@ function gridReadyHandler(id) {
     gridApp.setLayout(layoutStr);
     gridApp.setData(gridData);
 
+    //scrollHandle함수. 
+    var scrollHandler = function(event) {
+        //세로 스크롤이 이동될 때만 작동하도록 설정
+        if(event.direction == "vertical") {
+            var vpos = event.position;  //스크롤의 위치? 
+            if (vpos == 0) return;
+            if(vpos >= dataGrid.getMaxVerticalScrollPosition()) {
+                if (vpos != lastVpos) {
+                    lastVpos = vpos;
+                    gridAddPage();
+                }
+            }
+        }
+    }
+
     gridRoot = gridApp.getRoot();           //데이터와 그리드를 포함하는 객체
     var layoutCompleteHandler = function(event) {
         //getDataGrid(): 설정된 레이아웃에 의해 생성된 DataGrid 객체를 반환합니다.
         //return: object(DataGrid)
         dataGrid = gridRoot.getDataGrid();  //그리드 객체
+        dataGrid.addEventListener("scroll", scrollHandler); //scroll이벤트가 추가되었다.
     }
     //addEventListener(type, listener): type에 선언된 이벤트가 발생할 경우 이벤트를 받을 수 있는 listener함수를 등록합니다.
     gridRoot.addEventListener("layoutComplete", layoutCompleteHandler);
