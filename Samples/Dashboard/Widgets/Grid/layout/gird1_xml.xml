@@ -3,6 +3,7 @@
     <PercentFormatter id="percfmt" useThousandsSeparator="true"/>
     <DataGrid id="dg1" horizontalScrollPolicy="off" verticalAlign="middle">
         <groupedColumns>
+        <!--csv를 받아 들일 때 dataField는 Fx형식으로 받는데, 어떤 순서로 받을지는 두고봐야 함-->
             <DataGridColumn dataField="F0" headerText="거리" textAlign="center"/>
             <DataGridColumn dataField="F1" headerText="비고" textAlign="center"/>
             <DataGridColumn dataField="F2" headerText="분석 관심" textAlign="center"/>

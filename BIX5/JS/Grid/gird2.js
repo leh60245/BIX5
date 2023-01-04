@@ -41,6 +41,6 @@ jsVars += "&dataType=csv";
 }
 var gridApp, gridRoot, dataGrid;
 
-var layoutStrURL = "C:/Users/roadtech/BIX5Sample/leh60245_BIX5/BIX5/Samples/Dashboard/Widgets/Grid/layout/gird1_xml.xml"
+var layoutStrURL = "C:/Users/roadtech/BIX5Sample/leh60245_BIX5/BIX5/Samples/Dashboard/Widgets/Grid/layout/gird2_xml.xml"
 
 var gridDataURL = "C:/Users/roadtech/BIX5Sample/leh60245_BIX5/BIX5/Samples/Dashboard/Widgets/Chart/data/roadData.csv"
