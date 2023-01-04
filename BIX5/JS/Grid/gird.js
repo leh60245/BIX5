@@ -17,14 +17,15 @@ BIX5.grid.create("grid1", "gridHolder", jsVars, "100%", "100%");
  //BIX5 그리드의 준비가 완료된 경우 이 함수가 호출됩니다.
  //이 함수를 통해 그리드에 레이아웃과 데이터를 삽입합니다.
  //파라메터 : id - BIX5.grid.create() 사용 시 사용자가 지정한 id 입니다.
+var gridApp, gridRoot, dataGrid;
 function gridReadyHandler(id) {
     //BIX5Grid 관련 객체
     gridApp = document.getElementById(id);  //그리드를 포함하는 div 객체
-    gridRoot = gridApp.getRoot();           //데이터와 그리드를 포함하는 객체
 
     gridApp.setLayout(layoutStr);
     gridApp.setData(gridData);
 
+    gridRoot = gridApp.getRoot();           //데이터와 그리드를 포함하는 객체
     var layoutCompleteHandler = function(event) {
         //getDataGrid(): 설정된 레이아웃에 의해 생성된 DataGrid 객체를 반환합니다.
         //return: object(DataGrid)
@@ -33,6 +34,5 @@ function gridReadyHandler(id) {
     //addEventListener(type, listener): type에 선언된 이벤트가 발생할 경우 이벤트를 받을 수 있는 listener함수를 등록합니다.
     gridRoot.addEventListener("layoutComplete", layoutCompleteHandler);
 }
-var gridApp, gridRoot, dataGrid;
 
 //----------------------- 그리드 설정 끝 -----------------------@nd
