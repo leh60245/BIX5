@@ -1,0 +1,22 @@
+<BIX5>
+    <NumberFormatter id="numfmt" useThousandsSeparator="true"/>
+    <PercentFormatter id="percfmt" useThousandsSeparator="true"/>
+    <DataGrid id="dg1" horizontalScrollPolicy="off" verticalAlign="middle">
+        <groupedColumns>
+            <DataGridColumn dataField="F0" headerText="거리" textAlign="center"/>
+            <DataGridColumn dataField="F1" headerText="비고" textAlign="center"/>
+            <DataGridColumn dataField="F2" headerText="분석 관심" textAlign="center"/>
+            <DataGridColumn dataField="F3" headerText="소성변형" textAlign="center"/>
+            <DataGridColumn dataField="F4" headerText="종단평탄성" textAlign="center"/>
+            <DataGridColumnGroup headerText="도로포장파손 분석결과">
+            <DataGridColumn dataField="F5" headerText="균열량(m2)" textAlign="center"/>
+            <DataGridColumn dataField="F6" headerText="균열율(%)" textAlign="center"/>
+            </DataGridColumnGroup>
+            <DataGridColumnGroup headerText="SPI">
+                <DataGridColumn dataField="F7" headerText="도시고속도로" textAlign="center"/>
+                <DataGridColumn dataField="F8" headerText="주간선도로" textAlign="center"/>
+                <DataGridColumn dataField="F9" headerText="보조간선도로" textAlign="center"/>
+            </DataGridColumnGroup>
+        </groupedColumns>
+    </DataGrid>
+</BIX5>

@@ -1,0 +1,40 @@
+<BIX5>
+    <NumberFormatter id="numfmt" useThousandsSeparator="true"/>
+    <PercentFormatter id="percfmt" useThousandsSeparator="true"/>
+    <DataGrid id="dg2" horizontalScrollPolicy="off" verticalAlign="middle">
+        <groupedColumns>
+            <DataGridColumn dataField="F0" headerText="거리" textAlign="center"/>
+            <DataGridColumn dataField="F1" headerText="비고" textAlign="center"/>
+            <DataGridColumnGroup headerText="AP종방향균열[m 아스팔트]">
+                <DataGridColumn dataField="F2" headerText="L" textAlign="center"/>
+                <DataGridColumn dataField="F3" headerText="M" textAlign="center"/>
+                <DataGridColumn dataField="F4" headerText="H" textAlign="center"/>
+            </DataGridColumnGroup>
+            <DataGridColumnGroup headerText="AP횡방향균열[m 아스팔트]">
+                <DataGridColumn dataField="F5" headerText="L" textAlign="center"/>
+                <DataGridColumn dataField="F6" headerText="M" textAlign="center"/>
+                <DataGridColumn dataField="F7" headerText="H" textAlign="center"/>
+            </DataGridColumnGroup>            
+            <DataGridColumnGroup headerText="AP시공줄눈[m 아스팔트]">
+                <DataGridColumn dataField="F8" headerText="L" textAlign="center"/>
+                <DataGridColumn dataField="F9" headerText="M" textAlign="center"/>
+                <DataGridColumn dataField="F10" headerText="H" textAlign="center"/>
+            </DataGridColumnGroup>
+            <DataGridColumnGroup headerText="AP거북등균열[m 아스팔트]">
+                <DataGridColumn dataField="F11" headerText="L" textAlign="center"/>
+                <DataGridColumn dataField="F12" headerText="M" textAlign="center"/>
+                <DataGridColumn dataField="F13" headerText="H" textAlign="center"/>
+            </DataGridColumnGroup>
+            <DataGridColumnGroup headerText="AP패칭[m 아스팔트]">
+                <DataGridColumn dataField="F14" headerText="L" textAlign="center"/>
+                <DataGridColumn dataField="F15" headerText="M" textAlign="center"/>
+                <DataGridColumn dataField="F16" headerText="H" textAlign="center"/>
+            </DataGridColumnGroup>
+            <DataGridColumnGroup headerText="AP포트홀[m 아스팔트]">
+                <DataGridColumn dataField="F17" headerText="L" textAlign="center"/>
+                <DataGridColumn dataField="F18" headerText="M" textAlign="center"/>
+                <DataGridColumn dataField="F19" headerText="H" textAlign="center"/>
+            </DataGridColumnGroup>
+        </groupedColumns>
+    </DataGrid>
+</BIX5>
