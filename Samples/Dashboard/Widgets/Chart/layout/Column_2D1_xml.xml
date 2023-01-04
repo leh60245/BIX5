@@ -1,0 +1,48 @@
+<!--
+ 
+  CSV 데이터를 사용할 경우는 각각의 데이터 필드명을 F0, F1, F2 .. 와 같이 설정하게 되어있습니다.
+   multiData3.csv 내용으로는 0 번째 column에는 categoryField값, 1 번째 column에는 Area2DSeries의 yField 값 으로 설정.
+   그리하여 아래 레이아웃에서 F0, F1, F2, F3을 레이아웃에 설정하고 있습니다.
+ 
+-->
+<BIX5 styleName="bixChartStyle">
+
+    <Options>
+        <Caption text="AP 종방향 균열" styleName="captionStyle"/>
+    </Options>
+
+    <Style>
+        .bixChartStyle 
+        {
+            backgroundColor :000000;
+            borderColor     :000000;
+        }
+        .captionStyle{
+            fontsize        :12;
+            fontFamily      :Tahoma;
+        }
+    </Style>
+
+    <SeriesInterpolate id="ss"/>
+    <Column2DChart showDataTips="true" selectionMode="multiple" columnWidthRatio="0.48">
+        <horizontalAxis>
+            <CategoryAxis categoryField="LMH"/>
+        </horizontalAxis>
+        <verticalAxis>
+            <LinearAxis maximum="" />
+        </verticalAxis>
+        <horizontalAxisRenderers>
+            <Axis2DRenderer axis="{hAxis}" showLine="true" axisTitleStyleName="title"/>
+        </horizontalAxisRenderers>
+
+        <series>
+            <Column2DSeries labelPosition="outside" yField="거리합" displayName="" showDataEffect="{ss}">
+                <fill>
+                    <SolidColor color="#4453a8"/>
+                    <SolidColor color="#4453a8"/>
+                    <SolidColor color="#4453a8"/>
+                </fill>
+            </Column2DSeries>
+        </series>
+    </Column2DChart>
+</BIX5>
