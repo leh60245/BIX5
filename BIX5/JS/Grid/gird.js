@@ -24,7 +24,7 @@ function gridReadyHandler(id) {
     gridApp = document.getElementById(id);  //그리드를 포함하는 div 객체
 
     gridApp.setLayout(layoutStr);
-    gridApp.setData(gridData);
+    gridApp.setDataURLEx(gridDataURL);
 
     //scrollHandle함수. 
     var scrollHandler = function(event) {
@@ -52,4 +52,20 @@ function gridReadyHandler(id) {
     gridRoot.addEventListener("layoutComplete", layoutCompleteHandler);
 }
 
+var gridTotalRowCount = 300;    // 전체 데이터 건수 - html이 서버에서 작성될 때 반드시 넣어줘야 하는 변수.
+var gridRowPerPage = 20;        // 1페이지에서 보여줄 행 수
+var gridTotalPage = Math.ceil(gridTotalRowCount / gridRowPerPage);  //전체 페이지 계산
+var gridCurrentPage = 1;        // 현재 페이지
+
+function gridAddPage() {
+    if (gridCurrentPage >= gridTotalPage) return;
+
+    gridCurrentPage++;
+    //addDataURLEx(value, index, checkLast): 추가 데이터URL을 자바스트립트를 통해 등록한다.
+     //value(string 데이터URL), index(number, 데이터가 삽입될 행의 인덱스 번호), checkLast(boolean)
+    gridApp.addDataURLEx(dataUrl+gridCurrentPage);
+}
+
+var layoutURL = "~~";
+var dataUrl = "~~";
 //----------------------- 그리드 설정 끝 -----------------------@nd
