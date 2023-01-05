@@ -11,5 +11,7 @@
                 - data: 컴포넌트 데이터 파일이 있다. 확장자는 json이다.
                 - layout: 컴포넌트 레이아웃 파일이 있다. 확장자는 xml이다.
 
+### branch
+main
 
-### test용
+test
