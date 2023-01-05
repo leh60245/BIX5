@@ -1,5 +1,24 @@
 <!DOCTYPE html>
 <head>
+    
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <title>BIX5 Dashboard (BIXsoft)</title>
+
+    <!-- BIX5 CSS -->
+    <link rel="stylesheet" type="text/css" href="../../BIX5/Assets/BIX5.css"/>
+    <!-- BIX5 Dashboard CSS -->
+    <link rel="stylesheet" type="text/css" href="../../BIX5/Assets/BIX5Dashboard.css"/>
+    <!-- IE7, 8 에서 차트 생성하고자 하는 경우 -->
+    <!--[if IE]><script language="javascript" type="text/javascript" src="../../BIX5/JS/excanvas.js"></script><![endif]-->
+    <!-- BIX5 라이센스 -->
+    <script language="javascript" type="text/javascript" src="../../LicenseKey/BIX5License.js"></script>
+    <!-- BIX5 라이브러리 -->
+    <script language="javascript" type="text/javascript" src="../../BIX5/JS/BIX5.js"></script> 
+
+    <!-- Widget부분. 아직 왜 필요한지는 모르겠다. -->
     <script type="text/javascript">
         widget.componentReadyHandler = function(componentId){
             document.getElementById(componentId).setLayoutURLEx("./Widgets/Grid/layout/grid1_xml.xml");
@@ -12,6 +31,7 @@
         //dashboard pdf p.44
         widget.convertFrom = function(item, value, column){};
     </script>
+
     <script type="text/javascript">
         // ----------------------- 그리드 설정 시작 -------------------------------------
         // BIX5 그리드 생성 준비가 완료된 상태 시 호출할 함수를 지정합니다.
