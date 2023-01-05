@@ -11,7 +11,7 @@
         <Caption text="AP 종방향 균열" styleName="captionStyle"/>
     </Options>
 
-    <Style>
+    <Style> <!--아직 정해지지 않았다.-->
         .bixChartStyle 
         {
             backgroundColor :000000;
@@ -23,8 +23,11 @@
         }
     </Style>
 
+    <!--SeriesInterpolate: 축상 최소값 지점에서 데이터 값에 해당되는 지점까지의 출력에 대한 애니메이션 이펙트를 표현-->
     <SeriesInterpolate id="ss"/>
-    <Column2DChart showDataTips="true" selectionMode="multiple" columnWidthRatio="0.48">
+    <!--showDataTips: 데이터 포인트에 마우스 오버 시 데이터 팁 출력 여부 설정
+        selectionMode: 데이터 포인트에 마우스 오버 혹은 클릭 시 강조 표시 방식-->
+    <Column2DChart showDataTips="true" itemClickJsFunction="@widget.chartItemClickHandler">
         <horizontalAxis>
             <CategoryAxis categoryField="LMH"/>
         </horizontalAxis>
