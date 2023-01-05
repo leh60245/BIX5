@@ -5,6 +5,7 @@
    그리하여 아래 레이아웃에서 F0, F1, F2, F3을 레이아웃에 설정하고 있습니다.
  
 -->
+<script type="text/template">
 <BIX5 styleName="bixChartStyle">
 
     <Options>
@@ -33,18 +34,31 @@
         </horizontalAxis>
         <verticalAxis>
             <LinearAxis maximum="" />
+            <!-- BrokenAxis를 설정 하시려면 해당 축이 설정될 곳에 BrokenAxis를 설정하십시오. -->
+            <BrokenAxis id="vAxis" brokenMinimum="" brokenMaximum=""
+            brokenRatio="0.8"/>
+            <!-- brokenMinimum - Broken축이 시작될 값 입니다. -->
+            <!-- brokenMaximum - Broken축이 끝날 값 입니다. -->
+            <!-- brokenRatio - Broken축이 그려질 위치 값입니다. 0 ~ 1이 유효값이며 0에 가까울수록 축의 최소값에 -->
+            <!-- 가까워지며 1에 가까워질수록 축의 최대값에 가까워집니다. -->
         </verticalAxis>
         <horizontalAxisRenderers>
             <Axis2DRenderer axis="{hAxis}" showLine="true" axisTitleStyleName="title"/>
         </horizontalAxisRenderers>
+        <verticalAxisRenderers>
+            <BrokenAxis2DRenderer axis="{vAxis}"/>
+            <!-- BrokenAxis를 사용할 경우에 BrokenAxis2DRenderer를 설정 합니다. -->
+            <!-- 이 외의 렌더러를 설정할 경우 올바르게 표현이 되지 않습니다. -->
+        </verticalAxisRenderers>
 
+        <!-- 모든 차트의 데이터 표현은 시리즈가 담당하고 있다. -->
         <series>
-            <Column2DSeries labelPosition="outside" yField="거리합" displayName="" showDataEffect="{ss}">
-                <fill>
+            <Column2DSeries labelPosition="outside" yField="거리합" displayName="거리합" showDataEffect="{ss}">
+                <fills>
                     <SolidColor color="#4453a8"/>
                     <SolidColor color="#4453a8"/>
                     <SolidColor color="#4453a8"/>
-                </fill>
+                </fills>
             </Column2DSeries>
         </series>
     </Column2DChart>

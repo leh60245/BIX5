@@ -1,21 +1,51 @@
 <!DOCTYPE html>
 <head>
-    <!--차트 JS 경로-->
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <title>BIX5 Dashboard (BIXsoft)</title>
+
+    <!-- BIX5 CSS -->
+    <link rel="stylesheet" type="text/css" href="../../BIX5/Assets/BIX5.css"/>
+    <!-- BIX5 Dashboard CSS -->
+    <link rel="stylesheet" type="text/css" href="../../BIX5/Assets/BIX5Dashboard.css"/>
+    <!-- IE7, 8 에서 차트 생성하고자 하는 경우 -->
+    <!--[if IE]><script language="javascript" type="text/javascript" src="../../BIX5/JS/excanvas.js"></script><![endif]-->
+    <!-- BIX5 라이센스 -->
+    <script language="javascript" type="text/javascript" src="../../LicenseKey/BIX5License.js"></script>
+    <!-- BIX5 라이브러리 -->
+    <script language="javascript" type="text/javascript" src="../../BIX5/JS/BIX5.js"></script> 
+
+
     <script type="text/javascript">
         //widget 객체에 componentReadyHandler메소드를 정의한다. widget은 시스템 내부에서 생성되는 객체이다
         //이벤트 핸들러 사용을 원한다면 아래와 같이 사용
         //dashboard pdf p.41
         widget.componentReadyHandler = function(componentId) {
-            document.getElementById(componentId).setLayoutURL("./Widgets/Chart/layout/Column_2D1_xml.xml");
-            document.getElementById(componentId).setDataType("csv");
-            document.getElementById(componentId).setDataURL("./Widgets/Chart/data/roadData.csv");
+            // dashboard pdf p.41 내용
+            // document.getElementById(componentId).setLayoutURL("./Widgets/Chart/layout/Column_2D1_xml.xml");
+            // document.getElementById(componentId).setDataType("csv");
+            // document.getElementById(componentId).setDataURL("./Widgets/Chart/data/roadData.csv");
+
+            // DAHSBOARD - Features - chart 위젯 생성하기 - 2.JSON형식의 데이터를 URL로 연동하기
+            // 문제는  widget함수로 setDataType, setDataURL함수가 dashboard pdf, api에 안나와 있다는 거임.
+            // widget.setDataType("csv");
+            // widget.setDataURL("./Widgets/Chart/data/roadData.csv");
         };
         
         //사용 출처를 모르겠는 함수.. 나중에 찾아봐야함.
         //dashboard pdf p.42
-        widget.chartItemClickHandler = function(seriesId, displayText, index, data, values){};
+        //DAHSBOARD - Features - chart 위젯 생성하기 - 4.종합 에 정답이 있긴 함.
+        //chartItemClickHandler 함수는 차트를 클릭 했을 때 어떤 작업을 할지를 알려주는 거임.
+        widget.chartItemClickHandler = function(seriesId, displayText, index, data, values){
+            alert("~~");
+        };
     </script>
     <script type="text/javascript">
+        // -----------------------차트 설정 시작-----------------------
+        // BIX5 차트 생성 준비가 완료된 상태 시 호출할 함수를 지정합니다.
         var chartVars = "BIX5OnLoadCallFunction=chartReadyHandler";
 
         BIX5.chart.create("chart1", "chartHolder", chartVars, "100%", "100%");
@@ -34,16 +64,7 @@
 
         // 데이터 URL 경로 정의.
         var layoutUrl = "C:/Users/roadtech/BIX5Sample/leh60245_BIX5/BIX5/Samples/Dashboard/Widgets/Chart/layout/Column_2D1_xml.xml"
-
-        // string형식의 데이터
-        var chartData = [
-            {"length":0.01, "L":11.60, "M":0.30, "H":0.00},
-            {"length":0.02, "L":12.10, "M":0.30, "H":0.00},
-            {"length":0.03, "L":10.30, "M":0.30, "H":0.00},
-            {"length":0.04, "L":9.90, "M":0.30, "H":0.00},
-            {"length":0.05, "L":8.30, "M":0.30, "H":0.00},
-            {"length":0.06, "L":4.10, "M":0.30, "H":0.00},
-        ]
+        // -----------------------차트 설정 끝 -----------------------
     </script>
 </head>
 <body>
