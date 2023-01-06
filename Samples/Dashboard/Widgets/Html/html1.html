@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<head>
+    
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <title>BIX5 Dashboard (BIXsoft)</title>
+
+    <!-- BIX5 CSS -->
+    <link rel="stylesheet" type="text/css" href="../../BIX5/Assets/BIX5.css"/>
+    <!-- BIX5 Dashboard CSS -->
+    <link rel="stylesheet" type="text/css" href="../../BIX5/Assets/BIX5Dashboard.css"/>
+    <!-- IE7, 8 에서 차트 생성하고자 하는 경우 -->
+    <!--[if IE]><script language="javascript" type="text/javascript" src="../../BIX5/JS/excanvas.js"></script><![endif]-->
+    <!-- BIX5 라이센스 -->
+    <script language="javascript" type="text/javascript" src="../../LicenseKey/BIX5License.js"></script>
+    <!-- BIX5 라이브러리 -->
+    <script language="javascript" type="text/javascript" src="../../BIX5/JS/BIX5.js"></script> 
+
+</head>
+<boad>
+    <style>
+        h1{ color : red;}
+    </style>
+    
+    <script type="text/template">
+    <h1>가산로 총거리</h1>
+    <br id="br1">
+    </script>
+    
+    <script type="text/javascript">
+    widget.componentReadyHandler = function() {
+    console.log("widget ready");
+    }
+    widget.closeHandler = function() {
+    return confirm("위젯을 닫으시겠습니까?");
+    }
+    widget.resizeHandler = function(w, h){
+    console.log("resize");
+    }
+    widget.maximizeHandler = function(type, w, h){
+    console.log(type);
+    }
+    </script>
+</boad>
