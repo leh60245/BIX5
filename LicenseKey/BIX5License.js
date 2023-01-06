@@ -1,0 +1,1 @@
+console.log("BIX5License.js");

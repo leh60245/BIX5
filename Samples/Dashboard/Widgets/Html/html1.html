@@ -5,7 +5,7 @@
     <meta http-equiv="Content-Script-Type" content="text/javascript"/>
     <meta http-equiv="Content-Style-Type" content="text/css"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <title>BIX5 Dashboard (BIXsoft)</title>
+    <title>HTML1 난곡로 총 거리</title>
 
     <!-- BIX5 CSS -->
     <link rel="stylesheet" type="text/css" href="/BIX5/Assets/BIX5.css"/>
@@ -30,18 +30,19 @@
     <br id="br1">
     </script>
     
+    <!-- 요녀석만 어디 들어가는지 알기만 하면 속 편할 거 같은데 -->
     <script type="text/javascript">
-    widget.componentReadyHandler = function() {
-    console.log("widget ready");
-    }
-    widget.closeHandler = function() {
-    return confirm("위젯을 닫으시겠습니까?");
-    }
-    widget.resizeHandler = function(w, h){
-    console.log("resize");
-    }
-    widget.maximizeHandler = function(type, w, h){
-    console.log(type);
-    }
+        widget.componentReadyHandler = function() {
+        console.log("widget ready");
+        }
+        widget.closeHandler = function() {
+        return confirm("위젯을 닫으시겠습니까?");
+        }
+        widget.resizeHandler = function(w, h){
+        console.log("resize");
+        }
+        widget.maximizeHandler = function(type, w, h){
+        console.log(type);
+        }
     </script>
 </boad>

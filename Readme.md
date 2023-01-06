@@ -21,3 +21,6 @@
     2. 그리드 클릭 시 map 위젯 위 버튼 강조 및 차트 변경
     3. 차트 클릭 시 다른 차트 생성 (http://demo.bix5.net/SDK/Samples/Chart/Click_Pie3D_CreateChart.html)  
 - 
+
+### 아직 모르는 부분
+- chart나 grid를 생성할 때 사용되는 widget.~ 은 대시보드에 생성을 해야 하는지, 아니면 각 위젯에 각자 생성을 해야 하는지를 모르겠다.

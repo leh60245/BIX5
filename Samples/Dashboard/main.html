@@ -18,7 +18,7 @@
     <!-- BIX5 라이브러리 -->
     <script language="javascript" type="text/javascript" src="../../BIX5/JS/BIX5.js"></script> 
 
-
+    <!-- 대시보드 설정 -->
     <script type="text/javascript">
         //----------------------대시보드 설정 시작(메인)-----------------------
         BIX5.setAssetsPath("../../BIX5/Assets/");
@@ -26,7 +26,6 @@
         //대시보드 객체는 비동기적으로 생성하므로 대시보드가 준비된 이후에 대시보드 객체를 사용할수 있습니다. 
         //BIX5.dashboard.create 의 readyHandler 에 등록된 콜백함수가 대시보드가 준비가 되면 호출됩니다.
         BIX5.dashboard.create("dashboard1", "dashboardHolder", function(dashboard){
-
 
         // getSideBar(): 사이드바 obejct를 리턴
         // setSlideLayouts(): 슬라이드 레이아웃을 설정
@@ -51,14 +50,15 @@
         var slides =  [
             {slideName:"slide1",
             widgets:[
+                // html 총 4개로 각각 "난곡로 총 거리", "평균 소성변형, 평균 종단평탄성", "평균 균열량, 평균 균열율", "도시고속도로, 주간선도로, 보조간선도로"
                 {id:"Html1",x:10,y:10,width:500,height:290,
-                contentUrl: "./Widgets/Html/helloWorld.html",type:"html",title:"HTML",}
+                contentUrl: "./Widgets/Html/helloWorld.html",type:"html",title:"HTML1",}
                 ,{id:"Html2",x:10,y:10,width:500,height:290,
-                contentUrl: "./Widgets/Html/helloWorld.html",type:"html",title:"HTML",}
+                contentUrl: "./Widgets/Html/helloWorld.html",type:"html",title:"HTM2",}
                 ,{id:"Html3",x:10,y:10,width:500,height:290,
-                contentUrl: "./Widgets/Html/helloWorld.html",type:"html",title:"HTML",}
+                contentUrl: "./Widgets/Html/helloWorld.html",type:"html",title:"HTML3",}
                 ,{id:"Html4",x:10,y:10,width:500,height:290,
-                contentUrl: "./Widgets/Html/helloWorld.html",type:"html",title:"HTML",}
+                contentUrl: "./Widgets/Html/helloWorld.html",type:"html",title:"HTML4",}
 
                 ,{id:"Column_2D1",x:0,y:370,width:450,height:160, 
                 contentUrl:"./Widgets/Chart/Column_2D1.html",type:"chart",title:"Column_2D",
@@ -85,17 +85,12 @@
             ]}
         ];
         dashboard.setSlides(slides);
-        //  dashboard.setData(slides);도 대시보드에 슬라이드를 설정해주는 같은 작업을 해주는 듯 하다.
-        //  dashboard pdf p.45
+        // dashboard.setData(slides);도 대시보드에 슬라이드를 설정해주는 같은 작업을 해주는 듯 하다.
+         //dashboard pdf p.45
 
         }, "100%","100%", {enabled:false, gridlines:false, slideNavigator:false, sideBarBtn:false});
         //대시보드 수정, 격자선, 슬라이드 네비게이터, 사이드바 버튼 - false
     </script>
-
-
-    <!-- 샘플 작동을 위한 css -->
-    <link rel="stylesheet" type="text/css" href="./Web/sample.css"/>
-
 
 </head>
 <body>
