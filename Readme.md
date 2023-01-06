@@ -11,7 +11,11 @@
                 - data: 컴포넌트 데이터 파일이 있다. 확장자는 json이다.
                 - layout: 컴포넌트 레이아웃 파일이 있다. 확장자는 xml이다.
 
-### branch
-main
-
-test
+##### 추가로 필요한 기능 모음
+- JSON string 형식 데이터를 html 위젯으로 데시보드에 구현 (http://demo.bix5.net/SDK/Samples/Chart/Embeding_URL_Array.html)
+- 버튼 클릭 시 이벤트 발생
+    1. map 위젯 위 버튼 클릭 시 차트 변경 및 그리드 강조 효과.
+    (현제 구현된 map이 BIX5가 아닌 일반 Javascript라 연동 가능 여부 확인 필요)
+    2. 그리드 클릭 시 map 위젯 위 버튼 강조 및 차트 변경
+    3. 차트 클릭 시 다른 차트 생성 (http://demo.bix5.net/SDK/Samples/Chart/Click_Pie3D_CreateChart.html)  
+- 
